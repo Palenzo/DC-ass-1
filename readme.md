@@ -126,3 +126,8 @@ Each algorithm implements the basic primitive operations (send, receive, compute
 |  50  | Odd-Even Transposition  |        2450 |  1150 |     4900 |        100 |             0.001999 |
 |  50  | Sasaki Time-Optimal     |        1225 |     0 |       98 |         98 |             0.000000 |
 |  50  | Alternative Time-Optimal|         222 |     0 |       98 |         55 |             0.000000 |
+
+# GRAPHS
+
+
+![Comparison of Sorting Algorithms](algorithm_comparison.png)
