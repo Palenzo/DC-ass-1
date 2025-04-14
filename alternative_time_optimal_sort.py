@@ -164,6 +164,8 @@ def test_alternative_sort(n, seed=None):
     print(f"Messages exchanged: {metrics['messages']}")
     print(f"Time steps: {metrics['time_steps']}")
     print(f"Execution time: {metrics['execution_time']:.6f} seconds")
+    print(f"Time Complexity: O(log({n}))")
+    print(f"Space Complexity: O({n})")
     print()
     
     return metrics
@@ -181,9 +183,9 @@ if __name__ == "__main__":
     
     # Print comparison table
     print("Comparison Table for Alternative Time-Optimal Sort:")
-    print("=" * 80)
-    print(f"{'n':>5} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18}")
-    print("-" * 80)
+    print("=" * 120)
+    print(f"{'n':>5} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18} | {'Time Complexity':>18} | {'Space Complexity':>18}")
+    print("-" * 120)
     
     for size, metrics in results.items():
-        print(f"{size:>5} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f}")
+        print(f"{size:>5} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f} | {'O(log(' + str(size) + '))':>18} | {'O(' + str(size) + ')':>18}")

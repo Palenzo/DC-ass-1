@@ -46,26 +46,26 @@ def run_comparison(test_sizes=[10, 20, 30, 50], seed=42):
     
     #Print comprehensive comparison table
     print("\nComprehensive Comparison Table:")
-    print("=" * 120)
-    print(f"{'n':>5} | {'Algorithm':^25} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18}")
-    print("-" * 120)
+    print("=" * 150)
+    print(f"{'n':>5} | {'Algorithm':^25} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18} | {'Time Complexity':>18} | {'Space Complexity':>18}")
+    print("-" * 150)
     
     for size in test_sizes:
         #Odd-Even
         metrics = odd_even_results[size]
-        print(f"{size:>5} | {'Odd-Even Transposition':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f}")
+        print(f"{size:>5} | {'Odd-Even Transposition':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f} | {'O(n^2)':>18} | {'O(n)':>18}")
         
         #Sasaki
         metrics = sasaki_results[size]
-        print(f"{size:>5} | {'Sasaki Time-Optimal':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f}")
+        print(f"{size:>5} | {'Sasaki Time-Optimal':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f} | {'O(n log n)':>18} | {'O(n)':>18}")
         
         #Alternative
         metrics = alternative_results[size]
-        print(f"{size:>5} | {'Alternative Time-Optimal':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f}")
+        print(f"{size:>5} | {'Alternative Time-Optimal':^25} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f} | {'O(n log n)':>18} | {'O(n)':>18}")
         
         #Add separator between size groups
         if size != test_sizes[-1]:
-            print("-" * 120)
+            print("-" * 150)
     
     plot_comparisons(test_sizes, odd_even_results, sasaki_results, alternative_results)
     

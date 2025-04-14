@@ -116,7 +116,9 @@ class SasakiTimeOptimalSort:
             "swaps": self.swaps,
             "messages": self.messages,
             "time_steps": self.time_steps,
-            "execution_time": self.execution_time
+            "execution_time": self.execution_time,
+            "time_complexity": f"O({self.n})",
+            "space_complexity": f"O({self.n})"
         }
 
 def test_sasaki_sort(n, seed=None):
@@ -144,6 +146,8 @@ def test_sasaki_sort(n, seed=None):
     print(f"Messages exchanged: {metrics['messages']}")
     print(f"Time steps: {metrics['time_steps']}")
     print(f"Execution time: {metrics['execution_time']:.6f} seconds")
+    print(f"Time Complexity: {metrics['time_complexity']}")
+    print(f"Space Complexity: {metrics['space_complexity']}")
     print()
     
     return metrics
@@ -161,9 +165,9 @@ if __name__ == "__main__":
     
     #Print comparison table
     print("Comparison Table for Sasaki's Time-Optimal Sort:")
-    print("=" * 80)
-    print(f"{'n':>5} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18}")
-    print("-" * 80)
+    print("=" * 120)
+    print(f"{'n':>5} | {'Comparisons':>12} | {'Swaps':>6} | {'Messages':>10} | {'Time Steps':>10} | {'Execution Time (s)':>18} | {'Time Complexity':>15} | {'Space Complexity':>15}")
+    print("-" * 120)
     
     for size, metrics in results.items():
-        print(f"{size:>5} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f}")
+        print(f"{size:>5} | {metrics['comparisons']:>12} | {metrics['swaps']:>6} | {metrics['messages']:>10} | {metrics['time_steps']:>10} | {metrics['execution_time']:>18.6f} | {metrics['time_complexity']:>15} | {metrics['space_complexity']:>15}")
